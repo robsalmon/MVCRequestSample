@@ -20,6 +20,7 @@ namespace MVCRequestSample.Controllers
         }
       
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Index(AdditionViewModel model)
         {
             if (!ModelState.IsValid)

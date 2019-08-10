@@ -11,7 +11,7 @@
 
 @using (Html.BeginForm("Index", "Home"))
 {
-
+    @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(x => x.FirstNumber, "First Number")
         @Html.TextBoxFor(x => x.FirstNumber, new { @class = "form=control", @type = "number", @required = "required" })
