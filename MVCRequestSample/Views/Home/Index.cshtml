@@ -1,0 +1,34 @@
+﻿
+@model MVCRequestSample.Models.AdditionViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ValidationSummary()
+
+
+@using (Html.BeginForm("Index", "Home"))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.FirstNumber, "First Number")
+        @Html.TextBoxFor(x => x.FirstNumber, new { @class = "form=control", @type = "number" })
+        @Html.ValidationMessageFor(x => x.FirstNumber)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.SecondNumber, "Second Number")
+        @Html.TextBoxFor(x => x.SecondNumber, new { @class = "form=control", @type = "number" })
+        @Html.ValidationMessageFor(x => x.SecondNumber)
+    </div>
+    <div class="form-group">
+        <input class="btn btn-primary pull-right" type="submit" text="Submit">
+    </div>
+}
+
+@if (Model.Result != 0)
+{
+    @Model.Result
+}
