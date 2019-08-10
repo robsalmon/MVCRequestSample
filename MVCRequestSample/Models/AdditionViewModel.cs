@@ -8,13 +8,13 @@ namespace MVCRequestSample.Models
 {
     public class AdditionViewModel : IValidatableObject
     {
-        [Required]
+        [Required(ErrorMessage = "Please enter your first number")]
         public int FirstNumber
         {
             get; set;
         }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter your second number")]
         public int SecondNumber
         {
             get; set;
