@@ -1,10 +1,10 @@
 ﻿
 @model MVCRequestSample.Models.AdditionViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Add two numbers together";
 }
 
-<h2>Index</h2>
+<h2>Add two numbers together</h2>
 
 @Html.ValidationSummary()
 
@@ -14,13 +14,13 @@
 
     <div class="form-group">
         @Html.LabelFor(x => x.FirstNumber, "First Number")
-        @Html.TextBoxFor(x => x.FirstNumber, new { @class = "form=control", @type = "number" })
+        @Html.TextBoxFor(x => x.FirstNumber, new { @class = "form=control", @type = "number", @required = "required" })
         @Html.ValidationMessageFor(x => x.FirstNumber)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(x => x.SecondNumber, "Second Number")
-        @Html.TextBoxFor(x => x.SecondNumber, new { @class = "form=control", @type = "number" })
+        @Html.TextBoxFor(x => x.SecondNumber, new { @class = "form=control", @type = "number", @required = "required" })
         @Html.ValidationMessageFor(x => x.SecondNumber)
     </div>
     <div class="form-group">
@@ -28,7 +28,5 @@
     </div>
 }
 
-@if (Model.Result != 0)
-{
-    @Model.Result
-}
+
+    <p>Result:    @Model.Result   </p>
